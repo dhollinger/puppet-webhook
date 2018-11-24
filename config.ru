@@ -16,8 +16,6 @@ end
 PuppetWebhook.set :root, File.dirname(__FILE__)
 PuppetWebhook.set :command_prefix, 'umask 0022;'
 
-map '/sidekiq' do
-  run Sidekiq::Web
-end
+app = Rack::URLMap.new('/' => PuppetWebhook.new, '/sidekiq' => Sidekiq::Web.new)
 
-run PuppetWebhook
+run app
