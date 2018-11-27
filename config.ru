@@ -1,13 +1,15 @@
+$LOAD_PATH.unshift(File.dirname("lib/#{__FILE__}"))
+
 require 'fileutils'
 require 'logger'
 require 'puppet_webhook'
 require 'sidekiq/web'
 
 if ENV['RACK_ENV'] == 'production'
-  LOGGER = Logger.new('/var/log/puppet_webhook').freeze
-  LOCKFILE = '/var/run/puppet_webhook/puppet_webhook.lock'.freeze
+  LOGGER = Logger.new('/home/dhollinger/puppet_webhook.log').freeze
+  LOCKFILE = '/home/dhollinger/puppet_webhook/puppet_webhook.lock'.freeze
 
-  FileUtils.makedirs('/var/run/puppet_webhook')
+  FileUtils.makedirs('/home/dhollinger/puppet_webhook')
   FileUtils.touch(LOCKFILE) unless File.exist?(LOCKFILE)
 
   PuppetWebhook.set :logger, LOGGER

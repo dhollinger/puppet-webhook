@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.name = 'puppet_webhook'
   spec.summary = 'Sinatra Webhook Server for Puppet/R10K'
-  spec.version = '1.5.2'
+  spec.version = '2.0.0-alpha'
   spec.platform = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 2.2.0'
   spec.authors = ['Vox Pupuli']
@@ -12,20 +12,18 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
                    'LICENSE',
                    'config/*',
                    'lib/**/*',
-                   'bin/*'
                   ]
   spec.homepage = 'https://github.com/voxpupuli/puppet_webhook'
   spec.license = 'apache'
-  spec.executables = ['puppet_webhook']
   spec.require_paths = %w[lib config]
   spec.add_runtime_dependency 'json'
+  spec.add_runtime_dependency 'puma'
   spec.add_runtime_dependency 'rack-bodyparser'
   spec.add_runtime_dependency 'rocket-chat-notifier'
   spec.add_runtime_dependency 'sidekiq'
   spec.add_runtime_dependency 'sinatra'
   spec.add_runtime_dependency 'sinatra-contrib'
   spec.add_runtime_dependency 'slack-notifier'
-  spec.add_runtime_dependency 'webrick'
   spec.add_development_dependency 'codacy-coverage'
   spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'github_changelog_generator'
