@@ -4,7 +4,8 @@ project 'puppet-webhook' do |proj|
   # Set preferred component versions
   platform = proj.get_platform
 
-  proj.version '2.1.2'
+  proj.version '2.1.3rc3'
+  proj.branch 'build-2.1.3-rc1'
   proj.description 'The Webhook API server for trigger puppet actions'
   proj.license 'Apache 2.0'
   proj.vendor 'Vox Pupuli Organization <voxpupuli@groups.io>'
