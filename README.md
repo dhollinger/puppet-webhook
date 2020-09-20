@@ -168,6 +168,26 @@ type: Boolean
 description: Allow uppercase within the name of the module or environment passed to the API.
 default: true
 
+### Redis/Sidekiq Settings
+
+#### `redis_host`
+
+type: String
+description: The hostname, fqdn, or ip address to the Redis server.
+default: `localhost`
+
+#### `redis_port`
+
+type: Integer
+description: The port to connect to Redis on.
+default: `6379`
+
+#### `redis_password`
+
+type: String
+description: The password to authenticate to Redis with.
+default: `nil`
+
 ### Logging Settings
 
 #### `loglevel`
